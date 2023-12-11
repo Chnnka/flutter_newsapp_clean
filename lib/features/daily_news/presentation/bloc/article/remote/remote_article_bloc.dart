@@ -4,7 +4,6 @@ import 'package:flutter_newsapp_clean/features/daily_news/domain/usecases/get_ar
 import 'package:flutter_newsapp_clean/features/daily_news/presentation/bloc/article/remote/remote_article_event.dart';
 import 'package:flutter_newsapp_clean/features/daily_news/presentation/bloc/article/remote/remote_article_state.dart';
 
-
 class RemoteArticlesBloc
     extends Bloc<RemoteArticlesEvent, RemoteArticlesState> {
   final GetArticleUseCase _getArticleUseCase;
@@ -23,6 +22,7 @@ class RemoteArticlesBloc
     }
 
     if (dataState is DataFailed) {
+      print(dataState.error!.message);
       emit(RemoteArticlesError(dataState.error!));
     }
   }
