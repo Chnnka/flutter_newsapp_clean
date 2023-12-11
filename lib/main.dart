@@ -7,6 +7,7 @@ import 'package:flutter_newsapp_clean/features/daily_news/presentation/pages/hom
 import 'package:flutter_newsapp_clean/injection_container.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initializeDependancies();
   runApp(const MyApp());
 }
